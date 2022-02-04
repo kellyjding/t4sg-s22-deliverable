@@ -59,7 +59,7 @@ const CaseManagementContainer: React.FC = (props) => {
         
         {data
             ? data.cases.map((index : number, value : any) => {
-                return <CaseCategory key={index} />;
+                return <CaseCategory category_id={index} data={value}/>;
               })
             : "Something went wrong"}
 
