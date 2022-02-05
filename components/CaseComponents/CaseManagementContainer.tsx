@@ -59,9 +59,9 @@ const CaseManagementContainer: React.FC = (props) => {
         
         {/* format in grid  */}
         {data
-            ? data.category.map((index: number, value : any) => {
-                return <Grid item xs={3}>
-                    <CaseCategory key={index} category_id={value} />
+            ? data.category.map((index: number, value : ManagementCategory) => {
+                return <Grid key={index} item xs={3}>
+                    <CaseCategory category_id={value} />
                 </Grid> 
               })
             : "Something went wrong"}
