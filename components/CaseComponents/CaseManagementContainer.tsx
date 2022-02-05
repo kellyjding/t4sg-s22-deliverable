@@ -49,7 +49,7 @@ const CaseManagementContainer: React.FC = (props) => {
   return (
     <>
       <h5 className="title">Home Page</h5>
-      <Grid container spacing={3}>
+      <Grid container spacing={7}>
         {/*
           FEATURE 1 TODO:
           Use the data from the result of the query to render 
@@ -60,7 +60,7 @@ const CaseManagementContainer: React.FC = (props) => {
         {/* format in grid  */}
         {data
             ? data.category.map((index : number, value : any) => {
-                return <Grid item xs={2}>
+                return <Grid item xs={3}>
                     <CaseCategory key={index} category_id={value} />
                 </Grid> 
               })
@@ -88,7 +88,7 @@ const CaseManagementContainer: React.FC = (props) => {
       <Container
         style={{
           width: "100%",
-          borderStyle: "solid",
+          borderStyle: "dashed",
           padding: "0.75rem",
           marginTop: "0.75rem",
         }}
