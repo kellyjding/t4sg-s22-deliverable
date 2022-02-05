@@ -20,13 +20,13 @@ import AddTagModal from "./Modals/AddTagModal";
   in this variable 
 */
 export const ManagementContainerQuery = `
-query QueryCases {
-  cases {
+query QueryCategory {
+  category {
     name
     id
   }
 }
-`;
+`; 
 // END TODO
 
 export type ManagementCategory = {
@@ -57,13 +57,17 @@ const CaseManagementContainer: React.FC = (props) => {
           Remember, the response is stored in the "data" variable!
         */}
         
+        {/* format in grid  */}
         {data
-            ? data.cases.map((value : ManagementCategory, index : number) => {
-                return <CaseCategory key={index} data={value}/>;
+            ? data.category.map((index : number, value : any) => {
+                return <Grid item xs={2}>
+                    <CaseCategory key={index} category_id={value} />
+                </Grid> 
               })
             : "Something went wrong"}
 
         {/* END TODO */}
+
       </Grid>
 
       <AddCaseModal
